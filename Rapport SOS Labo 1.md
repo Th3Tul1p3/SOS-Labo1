@@ -10,29 +10,47 @@ L'argument -Pn permet de considérer tous les hôtes comme étant connectés, ce
 
 # Q 2 : Quel est le contrôleur de domaine ? Comment pouvez-vous le déterminer(2 façons distinctes)?
 
+Tous les contrôleurs de domaine écoute le port 389, il suffit donc de scanner ce port afin de savoir qu'elles sont les machines qui l'écoutent.
+
+
 # Q 3 : A partir de la capture tcpdump, déterminer comment laversion de Windows est récupérée? **SCREENSHOT**
 
 # Q 4 : Quels sont les droits d’exécution que vous obtenez ? **SCREENSHOT**
 
+
+
 # Q 5 : Comment expliquer que vous disposez d’autant de privilège ? 
+
+
 
 # Q 6 : Quel processus exécute votre meterpreter sur la machine victime (pid+nom) ? **SCREENSHOT** 
 
 # Q 7 : Quelle est la différence entre la version reverse_tcp et bind_tcp de meterpreter ? 
 
+bind_tcp utilise un port de la machine victime, et donc la manipulation peut être bloquée par un firewall
+reverse_tcp tente de connecter la machine victime à la machine de l'agresseur, dès lors c'est la machine attaquante qui doit ouvrir ses ports.
+
 # Q 8 : Dans quelle situation est-il recommandé d’utiliser la version reverse_tcp ? 
+
+Quand la machine victime est protégée par un firewall.
 
 # Q 9 : Dans la sortie de l’exécution, la notion de stage apparait, de quoi s’agit-il ? **SCREENSHOT**
 
 # Q 10: Quels sont les formats de hash utilisés pour stocker les mots de passe dans la SAM ? A quoi correspondent les différentes parties ? **SCREENSHOT**
 
+
+
 # Q 11: Comment expliquer que plusieurs comptes partagent les mêmes hashs ? 
+
+Car les utilisateurs ont le même mots de passes.
 
 # Q 12: Quel est le format de hash utilisé pour stocker les hash MS-CACHE ? A quoi correspondent les différentes parties ? **SCREENSHOT**
 
 # Q 13: À quoi correspond le compte qui se termine par un $ retrouvé dans la mémoire de LSASS ? **SCREENSHOT**
 
 # Q 14: Quel type de compte est nécessaire afin d’accéder au GPO sur le partage SYSVOL ? 
+
+N'importe quel compte standard peut lire les GPO du partage SYSVOL
 
 # Q 15: Quel est l’identifiant de la GPO qui contient le mot de passe ? **SCREENSHOT**
 

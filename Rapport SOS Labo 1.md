@@ -8,7 +8,7 @@
 
 L'argument -Pn permet de considérer tous les hôtes comme étant connectés, cela permet de sauter l'étape de découverte d'hôtes.
 
-# Q 2 : Quel est le contrôleurde domaine ? Comment pouvez-vous le déterminer(2 façons distinctes)?
+# Q 2 : Quel est le contrôleur de domaine ? Comment pouvez-vous le déterminer(2 façons distinctes)?
 
 # Q 3 : A partir de la capture tcpdump, déterminer comment laversion de Windows est récupérée? **SCREENSHOT**
 

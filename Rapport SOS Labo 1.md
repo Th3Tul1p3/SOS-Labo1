@@ -79,7 +79,7 @@ svc_sched, car ...
 
 # Q 19: Illustrer le résultat obtenu et expliquer pourquoi une seule entrée est retournée par le module ? **SCREENSHOT ° 13**
 
-
+![](/home/jerome/HEIG/Labo/SOS/13_1.png)
 
 # Q 20: Quel est le SPN complet vulnérable ? 
 
@@ -91,13 +91,17 @@ svc_sql
 
 # Q 22: Est-ce que ce compte est utilisé sur l’une des machines (utiliser smb_login) ? **SCREENSHOT**
 
+![](/home/jerome/HEIG/Labo/SOS/34.png)
 
+Oui, il est utilisé sur toutes les machines que nous avons pu détecter.
 
 # Q 23: Quels sont les privilèges requis pour l’utilisation de psexec ? 
 
 Admnistrator privileges
 
 # Q 24: Quelle vulnérabilité exploitez-vous pour rebondir sur le second serveur ? 
+
+
 
 # Q 25: Comment avez-vous pu récupérer un compte du domaine sur le second serveur ? **SCREENSHOT ° 19**
 
@@ -109,12 +113,28 @@ Installation d'un logiciel, accès à des fichiers critiques, en cas de modifica
 
 # Q 27: Comment éviter qu’un de ces comptes puissent être volés ?
 
-# Q 28: Pourquoi migrer dans un processus appartenant à l’utilisateur studentX ? 
+# Q 28: Pourquoi migrer dans un processus appartenant à l’utilisateur student3 ? 
+
+Nous migrons un processus pour passer d'une architecture 32 bits à une architecture 64bits  ou pour obtenir plus de privilèges. 
 
 # Q 29: Qu’est-ce qui se passe quand vous essayez de monter le partage la première fois ? Qu’est-ce qui se passe la seconde fois ? Comment expliquer cette différence ? **SCREENSHOT** 
 
+![](/home/jerome/HEIG/Labo/SOS/30_1.png)
+
+L'accès nous est refusé  car nous ne possédons pas les privilèges nécessaires pou faire l'opération.
+
+![](/home/jerome/HEIG/Labo/SOS/35_1.png)
+
+Nous avons fait usage du Golden ticket et donc nous avons maintenant les droits nécessaires pour effectuer cette opération. 
+
 # Q 30: Localiser l’événement d’authentification généré avec le Golden Ticket dans les logs du DC **SCREENSHOT** 
+
+![](/home/jerome/HEIG/Labo/SOS/36.png)
 
 # Q 31: Combien de temps est valable le golden ticket que vous avez généré ? 
 
+Indéfiniment car le contrôleur de domaine ne garde pas de trace des TGT émis. De ce fait s'il arrive à déchiffrer le TGT, c'est bon pour le contrôleur. 2 
+
 # Q 32: Qu’est ce que l’administrateur du domaine doit faire s’il détecte qu’un attaquant a compromis le hash du compte krbtgt ?
+
+SI l'administrateur venait à se rendre compte de ce problème, il devrait régénérer le **krbtgt** afin d'invalider celui utiliser pour le golden ticket. 

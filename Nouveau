@@ -476,6 +476,6 @@ User claims unknown.
 
 Kerberos support for Dynamic Access Control on this device has been disabled.
 
-Get-EventLog -LogName Security -ComputerName WAD-DC01 -Newest 30 | Where-Object {$_.EventID -eq 4624} | Select-Object -Property TimeGenerated,EventID,@{Label="Username";Expression={$_.replacementstrings[5]}}
+g
 
 

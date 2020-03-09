@@ -433,3 +433,49 @@ DESKTOP-EQDJAKZ$:1128:aad3b435b51404eeaad3b435b51404ee:f7919c8a3bb17d964a6ebfebc
 DESKTOP-PNCQTRO$:1129:aad3b435b51404eeaad3b435b51404ee:eff38d116f3d14bfc8c8893b732e0d69:::
 DESKTOP-GLBNZRW$:1130:aad3b435b51404eeaad3b435b51404ee:d8c6f4be53a5488553cf311968e7346b:::
 
+C:\Windows>whoami /all
+whoami /all
+
+USER INFORMATION
+----------------
+
+User Name    SID                                           
+============ ==============================================
+wad\student3 S-1-5-21-2322327208-1104618974-2441021186-1108
+
+
+GROUP INFORMATION
+-----------------
+
+Group Name                                 Type             SID          Attributes                                        
+========================================== ================ ============ ==================================================
+Everyone                                   Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group
+BUILTIN\Users                              Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\BATCH                         Well-known group S-1-5-3      Mandatory group, Enabled by default, Enabled group
+CONSOLE LOGON                              Well-known group S-1-2-1      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users           Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\This Organization             Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group
+LOCAL                                      Well-known group S-1-2-0      Mandatory group, Enabled by default, Enabled group
+Authentication authority asserted identity Well-known group S-1-18-1     Mandatory group, Enabled by default, Enabled group
+Mandatory Label\Medium Mandatory Level     Label            S-1-16-8192                                                    
+
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                    State   
+============================= ============================== ========
+SeChangeNotifyPrivilege       Bypass traverse checking       Enabled 
+SeIncreaseWorkingSetPrivilege Increase a process working set Disabled
+
+
+USER CLAIMS INFORMATION
+-----------------------
+
+User claims unknown.
+
+Kerberos support for Dynamic Access Control on this device has been disabled.
+
+Get-EventLog -LogName Security -ComputerName WAD-DC01 -Newest 30 | Where-Object {$_.EventID -eq 4624} | Select-Object -Property TimeGenerated,EventID,@{Label="Username";Expression={$_.replacementstrings[5]}}
+
+

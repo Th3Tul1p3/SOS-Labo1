@@ -121,4 +121,26 @@ CN=DESKTOP-FLMWEYO,CN=Computers,DC=wad,DC=local
 	RestrictedKrbHost/DESKTOP-FLMWEYO
 	HOST/DESKTOP-FLMWEYO
 
+/kiwi 
+===============
 
+Username          Domain  NTLM                              SHA1
+--------          ------  ----                              ----
+DESKTOP-EQDJAKZ$  WAD     f7919c8a3bb17d964a6ebfebc45ad0d3  2f1b84569896726b9170fc6cc6eb9f39f888cafa
+
+wdigest credentials
+===================
+
+Username          Domain  Password
+--------          ------  --------
+(null)            (null)  (null)
+DESKTOP-EQDJAKZ$  WAD     (null)
+
+kerberos credentials
+====================
+
+Username          Domain     Password
+--------          ------     --------
+(null)            (null)     (null)
+DESKTOP-EQDJAKZ$  wad.local  i\GgqD%Cl0g1t6dM3o?gTdv>b1r.Y+yHK02V$3MRqprZPyT@g3gApKVL2+u3;c3@.)aJ8yv@*N:2M?8)zo Buy`AY"4-7g*iaKGr!@_^gAuEkh9hoV:Q*)2W
+desktop-eqdjakz$  WAD.LOCAL  (null)

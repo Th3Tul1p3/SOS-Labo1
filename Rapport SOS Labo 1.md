@@ -12,13 +12,13 @@ L'argument -Pn permet de considérer tous les hôtes comme étant connectés, ce
 
 Tous les contrôleurs de domaine écoute le port 389, il suffit donc de scanner ce port afin de savoir qu'elles sont les machines qui l'écoutent.
 
-# Q 3 : A partir de la capture tcpdump, déterminer comment laversion de Windows est récupérée? **SCREENSHOT ° 7**
+# Q 3 : A partir de la capture tcpdump, déterminer comment laversion de Windows est récupérée? 
 
 Les paquets SMB qui effectuent les demandes de sessions contiennent la version de la machine cible. Il suffit donc de filtrer les paquets sur wireshark pour trouver l'OS de chaque machine.
 
 ![](/home/jerome/HEIG/Labo/SOS/7.png)
 
-# Q 4 : Quels sont les droits d’exécution que vous obtenez ? **SCREENSHOT ° 37**
+# Q 4 : Quels sont les droits d’exécution que vous obtenez ?
 
 Les droits du groupe de NT AUTHORITY\SYSTEM
 
@@ -28,7 +28,7 @@ Les droits du groupe de NT AUTHORITY\SYSTEM
 
 Car on fait partit du groupe NT AUTHORITY\SYSTEM
 
-# Q 6 : Quel processus exécute votre meterpreter sur la machine victime (pid+nom) ? **SCREENSHOT ° 3** 
+# Q 6 : Quel processus exécute votre meterpreter sur la machine victime (pid+nom) ? 
 
 cmd.exe, pid : 3812
 
@@ -43,13 +43,13 @@ reverse_tcp tente de connecter la machine victime à la machine de l'agresseur, 
 
 Quand la machine victime est protégée par un firewall.
 
-# Q 9 : Dans la sortie de l’exécution, la notion de stage apparait, de quoi s’agit-il ? **SCREENSHOT**
+# Q 9 : Dans la sortie de l’exécution, la notion de stage apparait, de quoi s’agit-il ? 
 
 Il s'agit de l'envoi du 2ème payload de notre reverse_tcp
 
 ![](/home/jerome/HEIG/Labo/SOS/1.png)
 
-# Q 10: Quels sont les formats de hash utilisés pour stocker les mots de passe dans la SAM ? A quoi correspondent les différentes parties ? **SCREENSHOT ° 4**
+# Q 10: Quels sont les formats de hash utilisés pour stocker les mots de passe dans la SAM ? A quoi correspondent les différentes parties ?
 
 Le format utilisé est le NTLM Hash.
 NTLM Hash   : username:relative identifier:LM Hash:NT Hash
@@ -60,7 +60,7 @@ NTLM Hash   : username:relative identifier:LM Hash:NT Hash
 
 Car les utilisateurs ont le même mots de passes.
 
-# Q 12: Quel est le format de hash utilisé pour stocker les hash MS-CACHE ? A quoi correspondent les différentes parties ? **SCREENSHOT ° 4 et 8**
+# Q 12: Quel est le format de hash utilisé pour stocker les hash MS-CACHE ? A quoi correspondent les différentes parties ?
 
 mscash2
 Username,Hash,Hash iteration count,Logon Domain Name,DNS Domain Name,Last Login,UPN,Effective Name,Full Name,Logon Script,Profile Path,Home Directory,HomeDir Drive,Primary Group,Additional Groups
@@ -69,7 +69,7 @@ Username,Hash,Hash iteration count,Logon Domain Name,DNS Domain Name,Last Login,
 
 ![](/home/jerome/HEIG/Labo/SOS/8.png)
 
-# Q 13: À quoi correspond le compte qui se termine par un $ retrouvé dans la mémoire de LSASS ? **SCREENSHOT ° 9**
+# Q 13: À quoi correspond le compte qui se termine par un $ retrouvé dans la mémoire de LSASS ? 
 
 Le compte créer à partir du nom de la machine lorsque cette dernière à rejoint le domaine
 
@@ -79,17 +79,17 @@ Le compte créer à partir du nom de la machine lorsque cette dernière à rejoi
 
 N'importe quel compte standard peut lire les GPO du partage SYSVOL
 
-# Q 15: Quel est l’identifiant de la GPO qui contient le mot de passe ? **SCREENSHOT ° 10**
+# Q 15: Quel est l’identifiant de la GPO qui contient le mot de passe ? 
 
 svc_sched
 
 ![](/home/jerome/HEIG/Labo/SOS/10.png)
 
-# Q 16: Quelle est la valeur chiffrée en CPassword qui correspond au mot de passe trouvé dans la GPP ? **SCREENSHOT ° 38**
+# Q 16: Quelle est la valeur chiffrée en CPassword qui correspond au mot de passe trouvé dans la GPP ? 
 
 ![](/home/jerome/HEIG/Labo/SOS/38.png)
 
-# Q 17: Est-ce que ce compte (cf. P16) est utilisé sur l’une des machines (smb_login) ? Comment expliquer le résultat que vous obtenez ? **SCREENSHOT ° 12**
+# Q 17: Est-ce que ce compte (cf. P16) est utilisé sur l’une des machines (smb_login) ? Comment expliquer le résultat que vous obtenez ? 
 
 Il est utilisé sur le 4 machines car il correspond au "Service scheduler" de Windows
 
@@ -99,7 +99,7 @@ Il est utilisé sur le 4 machines car il correspond au "Service scheduler" de Wi
 
 svc_sched, car ...
 
-# Q 19: Illustrer le résultat obtenu et expliquer pourquoi une seule entrée est retournée par le module ? **SCREENSHOT ° 13**
+# Q 19: Illustrer le résultat obtenu et expliquer pourquoi une seule entrée est retournée par le module ? 
 
 Car il n'y a qu'un seul TGS qui a été récupéré.
 
@@ -113,7 +113,7 @@ MSSQLSvc/WAD-SQL01.WAD.local:1433
 
 svc_sql
 
-# Q 22: Est-ce que ce compte est utilisé sur l’une des machines (utiliser smb_login) ? **SCREENSHOT**
+# Q 22: Est-ce que ce compte est utilisé sur l’une des machines (utiliser smb_login) ? 
 
 Oui, il est utilisé sur toutes les machines que nous avons pu détecter.
 
@@ -127,7 +127,7 @@ Admnistrator privileges
 
 PSexec avec Pass The Hash
 
-# Q 25: Comment avez-vous pu récupérer un compte du domaine sur le second serveur ? **SCREENSHOT ° 19**
+# Q 25: Comment avez-vous pu récupérer un compte du domaine sur le second serveur ? 
 
 Car quelqu'un s'était déjà loggé avec le compte administrator du domaine.
 
@@ -145,7 +145,7 @@ Changer régulièrement de mot de passe, avoir des mot de passe forts et n'utili
 
 Nous migrons un processus pour passer d'une architecture 32 bits à une architecture 64bits  ou pour obtenir plus de privilèges. 
 
-# Q 29: Qu’est-ce qui se passe quand vous essayez de monter le partage la première fois ? Qu’est-ce qui se passe la seconde fois ? Comment expliquer cette différence ? **SCREENSHOT** 
+# Q 29: Qu’est-ce qui se passe quand vous essayez de monter le partage la première fois ? Qu’est-ce qui se passe la seconde fois ? Comment expliquer cette différence ?
 
 ![](/home/jerome/HEIG/Labo/SOS/30_1.png)
 
@@ -155,7 +155,7 @@ L'accès nous est refusé  car nous ne possédons pas les privilèges nécessair
 
 Nous avons fait usage du Golden ticket et donc nous avons maintenant les droits nécessaires pour effectuer cette opération. 
 
-# Q 30: Localiser l’événement d’authentification généré avec le Golden Ticket dans les logs du DC **SCREENSHOT ° 36** 
+# Q 30: Localiser l’événement d’authentification généré avec le Golden Ticket dans les logs du DC 
 
 ![](/home/jerome/HEIG/Labo/SOS/36.png)
 
